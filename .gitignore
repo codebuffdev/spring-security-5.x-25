@@ -1,3 +1,7 @@
+# project specific
+C:\Users\USER\Documents\spring-security-5.x-25\01-project-seup-wrt-security\.idea
+C:\Users\USER\Documents\spring-security-5.x-25\01-project-seup-wrt-security\.mvn
+
 # Compiled class file
 *.class
 
@@ -22,3 +26,6 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/.metadata/
+
+
