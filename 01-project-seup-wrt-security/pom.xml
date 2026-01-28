@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>in.codebuffdev.ssecurity</groupId>
+	<artifactId>01-project-seup-wrt-security</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>01-project-seup-wrt-security Maven Webapp</name>
+
+	<!-- ========================= -->
+	<!-- Properties -->
+	<!-- ========================= -->
+	<properties>
+		<!-- Match your actual runtime -->
+		<java.version>1.8</java.version>
+		<spring.version>5.2.6.RELEASE</spring.version>
+		<spring.security.version>5.3.3.RELEASE</spring.security.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- ========================= -->
+	<!-- Dependencies -->
+	<!-- ========================= -->
+	<dependencies>
+
+		<!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- Spring Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<!-- Servlet API (Tomcat provides this) -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+	<!-- ========================= -->
+	<!-- Build -->
+	<!-- ========================= -->
+	<build>
+
+		<!-- ONE canonical WAR name -->
+		<finalName>01-project-seup-wrt-security</finalName>
+
+		<plugins>
+
+			<!-- Compiler -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.4.0</version>
+				<configuration>
+					<warName>01-project-seup-wrt-security</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<!-- WAR plugin -->
+<!--			<plugin>-->
+<!--				<artifactId>maven-war-plugin</artifactId>-->
+<!--				<version>3.4.0</version>-->
+<!--				<configuration>-->
+<!--					<outputDirectory>-->
+<!--						C:/Users/USER/Documents/apache-tomcat-9.0.115/webapps-->
+<!--					</outputDirectory>-->
+
+<!--					&lt;!&ndash; context path = /01-project-seup-wrt-security &ndash;&gt;-->
+<!--					<warName>01-project-seup-wrt-security</warName>-->
+
+<!--					<failOnMissingWebXml>false</failOnMissingWebXml>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<executions>
+					<execution>
+						<id>copy-war-to-tomcat</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>
+								C:/Users/USER/Documents/apache-tomcat-9.0.115/webapps
+							</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.build.directory}</directory>
+									<includes>
+										<include>01-project-seup-wrt-security.war</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+</project>
