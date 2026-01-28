@@ -1,6 +1,6 @@
 # project specific
-C:\Users\USER\Documents\spring-security-5.x-25\01-project-seup-wrt-security\.idea
-C:\Users\USER\Documents\spring-security-5.x-25\01-project-seup-wrt-security\.mvn
+/01-project-seup-wrt-security/.idea
+/01-project-seup-wrt-security/.mvn
 
 # Compiled class file
 *.class
