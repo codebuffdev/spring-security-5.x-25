@@ -1,6 +1,7 @@
 # project specific
 /01-project-seup-wrt-security/.idea
 /01-project-seup-wrt-security/.mvn
+/01-project-seup-wrt-security/.gitignore
 
 # Compiled class file
 *.class
